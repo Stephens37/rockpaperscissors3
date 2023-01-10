@@ -4,35 +4,39 @@ function getComputerChoice() {
 }
 console.log(getComputerChoice());
 
-/*let playerPrompt = prompt("Rock paper scissors");
-    if (playerPrompt != playerSelection) {
-        alert("Rock paper scissors");
-    }*/
+
+let playerSelection;
+do {playerSelection = (prompt("Rock paper scissors"))}
+
+while (playerSelection != "rock" && playerSelection != "paper" && playerSelection != "scissors")
+const computerSelection = getComputerChoice();
+
 function playRound(playerSelection, computerSelection) {
-    let playerPrompt = prompt("Rock paper scissors");
-    if (playerPrompt.toLowerCase() != options) {
-        prompt("Rock paper scissors");
-    }
-    if (playerSelection.getLowerCase === "rock" && computerSelection.getLowerCase === "scissors") {
+    if (playerSelection.toLowerCase() === "rock" && computerSelection.toLowerCase() === "scissors") {
         return "You win! Rock beats scissors.";
+
+
     }
-    else if (playerSelection.getLowerCase === "paper" && computerSelection.getLowerCase === "rock") {
+    else if (playerSelection.toLowerCase() === "paper" && computerSelection.toLowerCase() === "rock") {
         return "You win! Paper beats rock.";
     }
-    else if (playerSelection.getLowerCase === "scissors" && computerSelection.getLowerCase === "paper") {
+    else if (playerSelection.toLowerCase() === "scissors" && computerSelection.toLowerCase() === "paper") {
         return "You win! scissors beats paper.";
     }
-    else if (playerSelection.getLowerCase === "rock" && computerSelection.getLowerCase === "paper") {
+    else if (playerSelection.toLowerCase() === "rock" && computerSelection.toLowerCase() === "paper") {
         return "You lose! Paper beats rock.";
     }
-    else if (playerSelection.getLowerCase === "paper" && computerSelection.getLowerCase === "scissors") {
+    else if (playerSelection.toLowerCase() === "paper" && computerSelection.toLowerCase() === "scissors") {
         return "You lose! Scissors beats paper.";
     }
-    else if (playerSelection.getLowerCase === "scissors" && computerSelection.getLowerCase === "rock") {
+    else if (playerSelection.toLowerCase() === "scissors" && computerSelection.toLowerCase() === "rock") {
         return "You lose! Rock beats scissors.";
     }
-  }
-   
-  const playerSelection = "rock";
-  const computerSelection = getComputerChoice();
+    else return "It's a tie!";
+  } 
+
+  
+  
+
+  //const computerSelection = getComputerChoice();
   console.log(playRound(playerSelection, computerSelection));
