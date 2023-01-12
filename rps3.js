@@ -1,5 +1,5 @@
+const options = ["rock", "paper", "scissors"];
 function getComputerChoice() {
-    const options = ["rock", "paper", "scissors"];
     return options[Math.floor(Math.random() * options.length)];
 }
 console.log(getComputerChoice());
@@ -7,20 +7,22 @@ console.log(getComputerChoice());
 let playerScore = 0;
 let computerScore = 0;
 
+
+function getPlayerChoice(){
 let playerSelection;
 do {playerSelection = (prompt("Rock paper scissors"))}
 
 while (playerSelection != "rock" && playerSelection != "paper" && playerSelection != "scissors")
+}
 const computerSelection = getComputerChoice();
+const playerSelection = "paper";
 
 function playRound(playerSelection, computerSelection) {
-    //let playerScore = 0;
-    //let computerScore = 0;
     if (playerSelection.toLowerCase() === "rock" && computerSelection.toLowerCase() === "scissors") {
         playerScore += 1;
         console.log("You win! Rock beats scissors.");
     }
-    else if (playerSelection.toLowerCase() === "paper" && computerSelection.toLowerCase() === "rock") {
+    if (playerSelection.toLowerCase() === "paper" && computerSelection.toLowerCase() === "rock") {
         playerScore += 1;
         console.log("You win! Paper beats rock.");
     }
@@ -46,24 +48,20 @@ function playRound(playerSelection, computerSelection) {
   
   function game(){
     for(let i = 0; i < 5; i++){
-        if (i = 5) {
+        getPlayerChoice();
+        getComputerChoice();
+        playRound(playerSelection, computerSelection);
         if (playerScore > computerScore){
             console.log("Player wins!");
         }
         else if (playerScore < computerScore){
             console.log("Computer wins!");
         }
-        else if (playerScore == computerScore){ 
-            console.log("Tie game!");
+        else {
+        console.log("Tie game!");
+        }
     }
-}
-    else {
-        playRound(playerSelection, computerSelection);
-    };
     console.log(playerScore);
     console.log(computerScore);
-    }
 }
 game();
-
-  //const computerSelection = getComputerChoice();
