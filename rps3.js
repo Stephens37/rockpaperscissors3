@@ -1,3 +1,5 @@
+
+
 const options = ["rock", "paper", "scissors"];
 function getComputerChoice() {
     return options[Math.floor(Math.random() * options.length)];
@@ -6,16 +8,16 @@ console.log(getComputerChoice());
 
 let playerScore = 0;
 let computerScore = 0;
-
-
-function getPlayerChoice(){
-let playerSelection;
-do {playerSelection = (prompt("Rock paper scissors"))}
-
-while (playerSelection != "rock" && playerSelection != "paper" && playerSelection != "scissors")
+function getPlayerChoice() {
+  playerSelection = prompt("Rock paper scissors", "paper");
 }
+    console.log(playerScore);
+    console.log(computerScore);
+}
+game();
+
 const computerSelection = getComputerChoice();
-const playerSelection = "paper";
+
 
 function playRound(playerSelection, computerSelection) {
     if (playerSelection.toLowerCase() === "rock" && computerSelection.toLowerCase() === "scissors") {
@@ -51,6 +53,7 @@ function playRound(playerSelection, computerSelection) {
         getPlayerChoice();
         getComputerChoice();
         playRound(playerSelection, computerSelection);
+    }
         if (playerScore > computerScore){
             console.log("Player wins!");
         }
@@ -59,7 +62,6 @@ function playRound(playerSelection, computerSelection) {
         }
         else {
         console.log("Tie game!");
-        }
     }
     console.log(playerScore);
     console.log(computerScore);
